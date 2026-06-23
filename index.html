@@ -1,388 +1,332 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="高知市廿代町に佇む大人の隠れ家「手料理 こ橋」。名物「鰹のタタキ」は自家製仏手柑酢（ぶしゅかんす）の爽やかなタレで。旬の素材を活かした丁寧な和食と、高知の厳選地酒を落ち着いた空間でご堪能ください。">
-  <meta name="keywords" content="手料理 こ橋, 高知 居酒屋, 高知 鰹のタタキ, 廿代町 グルメ, 土佐料理, 仏手柑酢, 高知 和食, 高知 日本酒">
-  
-  <!-- Open Graph Protocol (OGP) -->
-  <meta property="og:title" content="手料理 こ橋 | 高知・廿代町の隠れ家和食">
-  <meta property="og:description" content="自家製仏手柑酢で味わう極上の鰹タタキと丁寧な創作和食。高知市廿代町の大人のための小料理屋。">
-  <meta property="og:image" content="images/katsuo_tataki.png">
-  <meta property="og:type" content="website">
-  
-  <title>手料理 こ橋 | 高知・廿代町の隠れ家和食小料理店</title>
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手料理こ橋 - 高知の隠れ家割烹</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ten+Mincho&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        daikon: {
+                            bg: '#FAF6ED',
+                            bg2: '#F5EDDC',
+                            text: '#292320',
+                            accent: '#988C79',
+                        }
+                    },
+                    fontFamily: {
+                        mincho: ['"Ten Mincho"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF6ED;
+            color: #292320;
+            font-family: "Ten Mincho", serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background-color: #988C79;
+            color: #FAF6ED;
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            line-height: 2;
+        }
+
+        .text-shadow-elegant {
+            text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-mask {
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+
+        @keyframes float-subtle {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hover-float:hover {
+            animation: float-subtle 4s ease-in-out infinite;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF6ED; }
+        ::-webkit-scrollbar-thumb { background: #988C79; }
+
+        .link-line {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #988C79;
+            font-size: 14px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .link-line::before {
+            content: "";
+            display: block;
+            width: 32px;
+            height: 1px;
+            background-color: #988C79;
+            transition: width 0.3s ease;
+        }
+
+        .link-line:hover { opacity: 0.7; }
+        .link-line:hover::before { width: 48px; }
+
+        .table-border-row {
+            border-bottom: 1px solid #E5E0D8;
+        }
+    </style>
 </head>
-<body>
+<body class="relative">
 
-  <!-- Header / Navigation -->
-  <header id="header">
-    <div class="container header-container">
-      <a href="#" class="logo">
-        手料理 こ橋
-        <span>Te-ryouri Kobashi</span>
-      </a>
-      
-      <!-- Mobile Toggle Button -->
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="メニューを開く">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation Menu -->
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="#concept">こだわり</a></li>
-          <li><a href="#menu">お品書き</a></li>
-          <li><a href="#sake">土佐の酒</a></li>
-          <li><a href="#gallery">ギャラリー</a></li>
-          <li><a href="#access">店舗情報</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 mix-blend-difference bg-gradient-to-b from-black/40 to-transparent pb-12 pt-6 px-8 md:px-16 flex justify-between items-start text-white">
+        <a href="#" class="flex flex-col items-center gap-2 group">
+            <div class="w-10 h-10 border border-white/50 rounded-full flex items-center justify-center font-bold tracking-widest text-sm group-hover:scale-105 transition-transform">
+                <span>こ橋</span>
+            </div>
+            <span class="text-xs tracking-widest opacity-80 font-sans">KOBASHI</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm tracking-widest">
+            <a href="#story" class="hover:opacity-60 transition-opacity">物語</a>
+            <a href="#menu" class="hover:opacity-60 transition-opacity">お料理</a>
+            <a href="#access" class="hover:opacity-60 transition-opacity">アクセス</a>
+            <div class="w-px h-4 bg-white/40"></div>
+            <a href="#reserve" class="hover:opacity-60 transition-opacity">ご予約</a>
+        </div>
+        <button class="md:hidden flex flex-col gap-[6px] mt-2">
+            <span class="w-6 h-px bg-white block"></span>
+            <span class="w-6 h-px bg-white block"></span>
+            <span class="w-4 h-px bg-white block ml-auto"></span>
+        </button>
+    </nav>
 
-  <main>
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-      <div class="hero-bg"></div>
-      <div class="container hero-content-container">
-        <!-- Vertical elegant Japanese text -->
-        <div class="hero-vertical-title">
-          <h1>手料理 こ橋</h1>
-          <div class="tagline">素材の息吹、仏手柑の香。</div>
+    <header class="relative w-full h-[90vh] bg-[#1a1816]">
+        <div class="absolute inset-0 w-full h-full hero-mask">
+            <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3EhtmgSUq5sa52tgHvyBTpQ0C2v/hf_20260623_004333_78750c83-8e98-4546-8c71-135730d2aa5e.png"
+                 alt="手料理こ橋 外観・料理イメージ"
+                 class="w-full h-full object-cover object-center opacity-60">
         </div>
-        
-        <!-- Glassmorphism intro box -->
-        <div class="hero-intro-box">
-          <h2>高知・廿代町で紡ぐ<br>手料理の極み</h2>
-          <p>
-            土佐の豊かな海と山が育んだ旬の恵み。
-            店主自ら包丁を握り、一品一品に想いを込めた手料理をお届けします。
-            喧騒を離れた大人のための隠れ家で、五感を満たす静かな時間をお過ごしください。
-          </p>
-          <a href="#access" class="btn-gold">ご予約・お問い合わせ</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Concept Section -->
-    <section class="concept section-padding reveal" id="concept">
-      <div class="container">
-        <div class="concept-grid">
-          <div class="concept-text">
-            <div class="section-title" style="text-align: left; margin-bottom: 2.5rem;">
-              <h2>こだわり</h2>
-              <span class="subtitle-eng">Our Philosophy</span>
-            </div>
-            <h3>名物「鰹のタタキ」を引き立てる、<br>自家製「仏手柑（ぶしゅかん）酢」</h3>
-            <p>
-              高知の定番である「鰹のタタキ」。こ橋では、一般的なポン酢や塩とは一線を画す、独自の味わいを追求しました。
-              調味に使用するのは、大将の家で大切に育てられた柑橘「仏手柑（ぶしゅかん）」の搾り果汁。
+        <!-- Hero Typography (Vertical) -->
+        <div class="absolute top-[20%] right-[10%] md:right-[20%] text-white text-shadow-elegant z-10 flex flex-row-reverse gap-6 md:gap-10">
+            <span class="vertical-text tracking-[0.4em] text-3xl md:text-[48px] font-normal leading-[1.8]">高知の夜に</span>
+            <span class="vertical-text tracking-[0.4em] text-3xl md:text-[48px] font-normal leading-[1.8]">ひっそりと灯る、</span>
+            <span class="vertical-text tracking-[0.4em] text-3xl md:text-[48px] font-normal leading-[1.8]">温かな隠れ家。</span>
+        </div>
+    </header>
+
+    <!-- Notice Panel -->
+    <div class="relative z-20 -mt-16 md:-mt-24 max-w-7xl mx-auto px-6 md:px-16 flex justify-start">
+        <div class="bg-white border border-daikon-bg2 p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] w-full md:w-[400px]">
+            <p class="text-sm font-bold tracking-widest text-[#292320]">今月のお休み</p>
+            <p class="text-sm mt-3 text-daikon-accent leading-relaxed">
+                日曜日定休<br>
+                ※祝日は営業いたします。
             </p>
-            <p>
-              仏手柑は、その名の通り仏様の手のような形をした独特な柑橘で、爽快でいて尖りのない、気品ある酸味が特徴です。
-              豪快に藁で炙り、旨味を閉じ込めた鰹に、この仏手柑酢をベースにした特製タレを纏わせることで、鰹本来の濃厚な脂の甘みと清涼な香りが調和した、当店だけの極上のタタキが完成します。
-            </p>
-            <p>
-              仕込みから調理、盛り付けに至るまで店主一人が丁寧に行うため、混雑時にはお時間をいただくこともございますが、その分、一口ごとに感動していただける料理を提供いたします。
-            </p>
-          </div>
-          <div class="concept-image-wrapper">
-            <div class="concept-image"></div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Specialties Section -->
-    <section class="specialties section-padding reveal" id="menu">
-      <div class="container">
-        <div class="section-title">
-          <h2>お品書き</h2>
-          <span class="subtitle-eng">Signature Dishes</span>
-        </div>
-        
-        <div class="specialties-grid">
-          <!-- Item 1: Katsuo -->
-          <article class="specialty-card">
-            <div class="specialty-img-wrapper">
-              <span class="specialty-badge">看板料理</span>
-              <img src="images/katsuo_tataki.png" alt="鰹のタタキ 仏手柑酢仕立て" class="specialty-img" loading="lazy">
-            </div>
-            <div class="specialty-info">
-              <div>
-                <div class="specialty-header">
-                  <h3 class="specialty-title">鰹のタタキ 仏手柑酢仕立て</h3>
-                  <span class="specialty-price">時価</span>
-                </div>
-                <p class="specialty-desc">
-                  新鮮な鰹を高温の藁火で一気に炙り、外は香ばしく、中は艶やかなレアに仕上げます。大将特製の「仏手柑（ぶしゅかん）酢」のタレと、薄切りにしたにんにくや薬味をたっぷりと添えてお召し上がりください。
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-- Item 2: Tosa Wagyu -->
-          <article class="specialty-card">
-            <div class="specialty-img-wrapper">
-              <span class="specialty-badge">特選</span>
-              <img src="images/katsuo_tataki.png" alt="土佐和牛のタタキ" class="specialty-img" style="object-position: center; filter: hue-rotate(15deg) saturate(1.1);" loading="lazy">
-            </div>
-            <div class="specialty-info">
-              <div>
-                <div class="specialty-header">
-                  <h3 class="specialty-title">土佐和牛のタタキ</h3>
-                  <span class="specialty-price">2,400円〜</span>
-                </div>
-                <p class="specialty-desc">
-                  高知の誇る赤身の銘牛「土佐あかうし」など、選び抜かれた和牛の美味しさを引き出す低温調理。きめ細やかな肉質と程よい脂の旨味が溶け合い、噛むほどに芳醇なコクが口いっぱいに広がります。
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-        
-        <!-- Other Menu Items Grid -->
-        <div style="margin-top: 5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 2rem; border-radius: 4px;">
-            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent-gold); margin-bottom: 1rem; border-bottom: 1px solid rgba(204, 164, 59, 0.2); padding-bottom: 0.5rem;">お刺身の盛り合わせ</h4>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">その日に仕入れた地魚（アオリイカ、金目鯛、ウツボなど）の鮮やかな盛り合わせ。 1,800円〜</p>
-          </div>
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 2rem; border-radius: 4px;">
-            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent-gold); margin-bottom: 1rem; border-bottom: 1px solid rgba(204, 164, 59, 0.2); padding-bottom: 0.5rem;">山海の天ぷら盛り合わせ</h4>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">高知の新鮮な山菜、四万十川の川エビやアオサのりをサクッと軽い衣で仕上げました。 1,500円〜</p>
-          </div>
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 2rem; border-radius: 4px;">
-            <h4 style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--accent-gold); margin-bottom: 1rem; border-bottom: 1px solid rgba(204, 164, 59, 0.2); padding-bottom: 0.5rem;">季節の土鍋鯛めし</h4>
-            <p style="color: var(--text-secondary); font-size: 0.9rem;">真鯛の旨味をお米の芯まで染み込ませ、ご注文を受けてからじっくり炊き上げます。お食事の締めに。 2,000円〜</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sake Section -->
-    <section class="sake section-padding reveal" id="sake">
-      <div class="container">
-        <div class="sake-container">
-          <!-- Image Side -->
-          <div class="sake-image-side">
-            <img src="images/tosa_sake.png" alt="土佐の日本酒" class="sake-main-img" loading="lazy">
-          </div>
-          
-          <!-- Text Side -->
-          <div class="sake-list-side">
-            <div class="section-title" style="text-align: left; margin-bottom: 2.5rem;">
-              <h2>土佐の酒</h2>
-              <span class="subtitle-eng">Kochi Local Sake</span>
-            </div>
-            <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">淡麗辛口、料理に寄り添う土佐の銘酒</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">
-              高知の酒は、すっきりとした喉越しとキレが際立つ「淡麗辛口」が特徴です。こ橋では、地元・高知の銘酒の中から、当店の丁寧な味付けの手料理や鰹の脂を最も引き立てる日本酒を大将が厳選して取り揃えています。
-            </p>
-            
-            <div class="sake-list">
-              <!-- Sake 1 -->
-              <div class="sake-item">
-                <div class="sake-label">
-                  <span class="sake-name">酔鯨</span>
-                  <span class="sake-origin">酔鯨酒造 / 高知市</span>
-                </div>
-                <div class="sake-description">
-                  適度な酸味があり、スマートでキレがある辛口。鰹のタタキの脂をすっきりと流し、旨味をさらに際立たせる至極の組み合わせです。
-                </div>
-              </div>
-              
-              <!-- Sake 2 -->
-              <div class="sake-item">
-                <div class="sake-label">
-                  <span class="sake-name">司牡丹</span>
-                  <span class="sake-origin">司牡丹酒造 / 佐川町</span>
-                </div>
-                <div class="sake-description">
-                  「船中八策」に代表される、超辛口ながらも豊かなコクを持つ酒。しっかりとした味付けの煮物や、土佐あかうしの肉料理に最適です。
-                </div>
-              </div>
-
-              <!-- Sake 3 -->
-              <div class="sake-item">
-                <div class="sake-label">
-                  <span class="sake-name">美丈夫</span>
-                  <span class="sake-origin">濱川商店 / 田野町</span>
-                </div>
-                <div class="sake-description">
-                  まるで湧き水を思わせるような澄んだ透明感と、ほのかな柑橘の香り。女性にも人気が高く、お刺身や天ぷらに優しく寄り添います。
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery section-padding reveal" id="gallery">
-      <div class="container">
-        <div class="section-title">
-          <h2>ギャラリー</h2>
-          <span class="subtitle-eng">Visual Gallery</span>
-        </div>
-        
-        <div class="gallery-grid">
-          <!-- Item 1 -->
-          <div class="gallery-item">
-            <img src="images/hero_bg.png" alt="店舗内観" class="gallery-img" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>店舗内観</h4>
-              <p>温かい光が包むカウンター。大将との会話も弾みます。</p>
-            </div>
-          </div>
-          <!-- Item 2 -->
-          <div class="gallery-item">
-            <img src="images/katsuo_tataki.png" alt="名物 鰹のタタキ" class="gallery-img" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>鰹のタタキ</h4>
-              <p>仏手柑酢の特製ダレで食べる自慢の一皿。</p>
-            </div>
-          </div>
-          <!-- Item 3 -->
-          <div class="gallery-item">
-            <img src="images/tosa_sake.png" alt="銘酒セレクション" class="gallery-img" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>地酒</h4>
-              <p>料理の旨さをさらに広げる土佐の辛口日本酒。</p>
-            </div>
-          </div>
-          <!-- Item 4 -->
-          <div class="gallery-item">
-            <img src="images/katsuo_tataki.png" alt="丁寧な仕込み" class="gallery-img" style="filter: hue-rotate(10deg);" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>店主の手仕事</h4>
-              <p>一切の妥協なく、一人で全ての仕込みを行います。</p>
-            </div>
-          </div>
-          <!-- Item 5 -->
-          <div class="gallery-item">
-            <img src="images/exterior.png" alt="店舗外観" class="gallery-img" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>店舗外観</h4>
-              <p>廿代町の路地裏ビル2階にひっそりと佇みます。</p>
-            </div>
-          </div>
-          <!-- Item 6 -->
-          <div class="gallery-item">
-            <img src="images/tosa_sake.png" alt="おもてなしの心" class="gallery-img" style="filter: brightness(0.8) contrast(1.1);" loading="lazy">
-            <div class="gallery-overlay">
-              <h4>至福のひととき</h4>
-              <p>高知の夜を、美味しい料理と酒で彩ります。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Information / Access Section -->
-    <section class="info-section section-padding reveal" id="access">
-      <div class="container">
-        <div class="section-title">
-          <h2>店舗情報</h2>
-          <span class="subtitle-eng">Shop Information</span>
-        </div>
-        
-        <div class="info-grid">
-          <!-- Information Details -->
-          <div class="info-details">
-            <table class="info-table">
-              <tr>
-                <th>店名</th>
-                <td>手料理 こ橋（こばし）</td>
-              </tr>
-              <tr>
-                <th>住所</th>
-                <td>
-                  〒780-0843<br>
-                  高知県高知市廿代町1-3 クリエイトビル2F<br>
-                  <span style="font-size: 0.85rem; color: var(--text-secondary); display: block; margin-top: 0.3rem;">
-                    ※蓮池町通駅（とさでん）から徒歩1分、高知駅から徒歩約10分
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>電話番号</th>
-                <td style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600; color: var(--accent-gold);">
-                  088-873-1084<br>
-                  <span style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400; display: block; margin-top: 0.2rem;">
-                    ※少人数での営業のため、事前のご予約をおすすめいたします。
-                  </span>
-                </td>
-              </tr>
-              <tr>
-                <th>営業時間</th>
-                <td>17:00 〜 23:00（L.O. 22:30）</td>
-              </tr>
-              <tr>
-                <th>定休日</th>
-                <td>日曜日（連休の場合は変更となる場合がございます）</td>
-              </tr>
-              <tr>
-                <th>席数</th>
-                <td>全 18席（カウンター8席、テーブル席、半個室あり）</td>
-              </tr>
-            </table>
-          </div>
-          
-          <!-- Styled Map Placeholder -->
-          <div class="info-map-wrapper">
-            <div class="custom-map-placeholder">
-              <div class="map-icon">📍</div>
-              <div class="map-location-tag">
-                <h4>手料理 こ橋</h4>
-                <p>高知県高知市廿代町1-3<br>クリエイトビル 2階</p>
-              </div>
-              <a href="https://maps.google.com/?q=高知県高知市廿代町1-3クリエイトビル" target="_blank" rel="noopener noreferrer" class="btn-gold map-link-btn">
-                Google Mapsで開く
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-logo">
-        手料理 こ橋
-        <span>Te-ryouri Kobashi</span>
-      </div>
-      
-      <ul class="footer-nav">
-        <li><a href="#hero">TOP</a></li>
-        <li><a href="#concept">こだわり</a></li>
-        <li><a href="#menu">お品書き</a></li>
-        <li><a href="#sake">土佐の酒</a></li>
-        <li><a href="#gallery">ギャラリー</a></li>
-        <li><a href="#access">店舗情報</a></li>
-      </ul>
-      
-      <p class="footer-note">
-        当店は新鮮な食材を最適な状態でお召し上がりいただくため、仕込みに多くの時間を費やしております。<br>
-        お席に限りがございますので、ご来店の際は事前にお電話にて空席状況をご確認・ご予約いただけますと幸いです。
-      </p>
-      
-      <div class="copyright">
-        &copy; 2026 手料理 こ橋. All Rights Reserved.
-      </div>
     </div>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="app.js"></script>
+    <!-- Story / Concept Section -->
+    <section id="story" class="py-32 relative w-full">
+        <div class="absolute top-0 right-0 w-[40%] h-[120%] bg-daikon-bg2 -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="relative group">
+                <img src="file:///C:/Users/Mjojo/Downloads/ChatGPT Image 2026年6月23日 10_07_41.png"
+                     alt="Japanese kitchen tools"
+                     class="w-full h-auto aspect-[4/5] object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700">
+            </div>
+
+            <div class="flex flex-col items-start px-0 md:px-12">
+                <h2 class="text-2xl md:text-[32px] leading-relaxed mb-12 tracking-wide">
+                    気取らず、飾らず、<br>
+                    本当に美味しいものを少しずつ。
+                </h2>
+                <div class="space-y-6 text-sm md:text-base leading-loose text-daikon-accent">
+                    <p>
+                        はりまや町の喧騒から少し離れた路地裏。<br>
+                        暖簾をくぐると、木の香りと出汁の優しい匂いが漂います。
+                    </p>
+                    <p>
+                        地元高知の豊かな海の幸、山の幸を、<br>
+                        店主自らが足を運び、目で見て厳選。<br>
+                        素材の持ち味を最大限に引き出す丁寧な手仕事で<br>
+                        一皿一皿に真心を込めてお出ししています。
+                    </p>
+                    <p>
+                        親しい人との語らいや、大切な記念日に。<br>
+                        心ほどける時間をお過ごしください。
+                    </p>
+                </div>
+                <div class="mt-12">
+                    <a href="#" class="link-line">物語の続き</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dish Section -->
+    <section id="menu" class="py-32 w-full relative">
+        <div class="absolute top-[20%] left-0 w-[60%] h-[60%] bg-daikon-bg2 -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-12 gap-12">
+
+            <div class="md:col-span-4 flex flex-col justify-center order-2 md:order-1 pt-12 md:pt-0">
+                <h3 class="text-xl md:text-[24px] mb-8 tracking-wider font-semibold">
+                    名物<br>
+                    鰹のたたき 仏手柑果汁添え
+                </h3>
+                <p class="text-sm leading-loose text-daikon-accent mb-10">
+                    表面を一気に焼き上げ、香ばしさを纏わせた分厚い鰹。<br>
+                    自家製のポン酢に、高知特産の「仏手柑（ぶっしゅかん）」の<br>
+                    爽やかな果汁をたっぷりと絞ってご堪能ください。<br>
+                    薬味のニンニクやミョウガとの相性は格別です。
+                </p>
+                <a href="#" class="link-line">お品書きを見る</a>
+            </div>
+
+            <div class="md:col-span-8 relative order-1 md:order-2">
+                <img src="file:///C:/Users/Mjojo/.gemini/antigravity/scratch/kobashi-website/images/katsuo_tataki.png"
+                     alt="Katsuo no Tataki seared bonito sashimi"
+                     class="w-full h-[500px] md:h-[700px] object-cover hover-float">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Atmosphere Section -->
+    <section class="py-24 w-full">
+        <div class="max-w-6xl mx-auto px-6 md:px-16 text-center mb-16">
+            <h2 class="text-2xl md:text-[32px] tracking-wide mb-6">おひとりさまで、<br class="md:hidden">大切な人と。</h2>
+            <p class="text-sm text-daikon-accent leading-loose">
+                カウンター席では店主との会話を肴に。<br>
+                奥にはゆったりと寛げる個室もご用意しております。
+            </p>
+        </div>
+
+        <div class="w-full px-4 overflow-hidden">
+            <img src="file:///C:/Users/Mjojo/Downloads/ChatGPT Image 2026年6月23日 10_22_19.png"
+                 alt="Interior of Japanese restaurant with wooden counter"
+                 class="w-[90%] md:w-[70%] mx-auto h-[40vh] md:h-[60vh] object-cover grayscale-[15%]">
+        </div>
+    </section>
+
+    <!-- Reservation Block -->
+    <section id="reserve" class="py-32 w-full flex flex-col items-center justify-center text-center">
+        <p class="text-sm tracking-[0.2em] mb-4 text-[#292320]">ご予約・お問い合わせ</p>
+        <a href="tel:0888732332" class="text-[40px] md:text-[64px] font-sans tracking-widest text-[#292320] hover:text-daikon-accent transition-colors">
+            088-873-2332
+        </a>
+        <div class="w-[80px] h-px bg-[#E5E0D8] my-8"></div>
+        <p class="text-xs tracking-wider text-daikon-accent leading-relaxed">
+            営業時間 : 17:00 ~ 23:00 (L.O. 22:30)<br>
+            ※各種クレジットカードをご利用いただけます。
+        </p>
+    </section>
+
+    <!-- Access Info -->
+    <section id="access" class="py-24 bg-daikon-bg2">
+        <div class="max-w-6xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-16">
+
+            <div>
+                <h2 class="text-2xl tracking-widest mb-12">アクセス</h2>
+                <div class="text-sm tracking-wide text-[#292320]">
+                    <div class="flex flex-col md:flex-row py-5 table-border-row border-t border-[#E5E0D8]">
+                        <span class="w-32 opacity-70 mb-2 md:mb-0">住所</span>
+                        <span>〒780-0843<br>高知県高知市廿代町1-3 クリエイトビル2F</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row py-5 table-border-row">
+                        <span class="w-32 opacity-70 mb-2 md:mb-0">営業時間</span>
+                        <span>17:00 ~ 23:00 (L.O. 22:30)</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row py-5 table-border-row">
+                        <span class="w-32 opacity-70 mb-2 md:mb-0">定休日</span>
+                        <span>日曜日</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row py-5 table-border-row">
+                        <span class="w-32 opacity-70 mb-2 md:mb-0">お電話</span>
+                        <a href="tel:0888732332" class="hover:text-daikon-accent transition-colors">088-873-2332</a>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <a href="https://maps.app.goo.gl/2qTDpKXcocnvFxFR6" target="_blank"
+                       class="inline-block border border-[#292320] text-[#292320] px-8 py-3 text-xs tracking-widest hover:bg-[#292320] hover:text-white transition-colors">
+                        Googleマップで開く
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="w-full h-[400px]">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207.78994790261814!2d133.54221641651878!3d33.56276811877158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354e19498b1b1069%3A0xd9e2a9adfdfe68cc!2z44GT5qmL!5e0!3m2!1sja!2sjp!4v1782178248379!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#211d1a] text-white py-24">
+        <div class="max-w-6xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-0">
+
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 border border-white/30 rounded-full flex items-center justify-center font-bold tracking-widest text-sm">
+                        <span>こ橋</span>
+                    </div>
+                    <span class="text-lg tracking-[0.3em]">手料理こ橋</span>
+                </div>
+                <div class="flex flex-col gap-3 text-sm tracking-widest text-white/60">
+                    <a href="#" class="hover:text-white transition-colors">ホーム</a>
+                    <a href="#menu" class="hover:text-white transition-colors">お料理</a>
+                    <a href="#access" class="hover:text-white transition-colors">アクセス</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-8 md:items-end text-left md:text-right text-white/80">
+                <div>
+                    <p class="text-xs mb-2 opacity-60">電話番号</p>
+                    <p class="text-2xl font-sans tracking-widest">088-873-2332</p>
+                </div>
+                <div>
+                    <p class="text-xs mb-2 opacity-60">住所</p>
+                    <p class="text-sm leading-loose tracking-widest">
+                        〒780-0843<br>
+                        高知県高知市廿代町1-3 クリエイトビル2F
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 md:px-16 mt-24 text-center md:text-left">
+            <p class="text-[10px] text-white/30 tracking-widest uppercase">&copy; Teryori Kobashi. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
